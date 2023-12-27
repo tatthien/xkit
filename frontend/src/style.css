@@ -55,3 +55,7 @@ body {
   --nav-item-color-hover: var(--tx1);
   --nav-item-background-hover: var(--bg3);
 }
+
+* {
+  user-select: none;
+}

@@ -1,17 +1,35 @@
-.mainContainer {
+.wrapper {
   display: flex;
   height: 100vh;
 }
 
+.header {
+  height: 32px;
+  padding-left: 80px;
+  border-bottom: 1px solid var(--ui1);
+}
+
 .sidebar {
   background: var(--bg2);
-  padding: 0.5rem 0.5rem;
   border-right: 1px solid var(--ui1);
 }
 
 .content {
   flex: 1;
-  padding: 1rem;
+}
+
+.sidebarHeader {
+  border-bottom: 1px solid var(--ui1);
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  max-height: 36px;
+}
+
+.sidebarNav {
+  padding: 0.5rem 0.5rem;
 }
 
 .sidebarLink {
@@ -29,4 +47,13 @@
 .sidebarLinkActive {
   background: var(--nav-item-background-hover);
   color: var(--nav-item-color-hover);
+}
+
+.contentHeader {
+  padding: 0.25rem 0.5rem;
+  min-height: 36px;
+  max-height: 36px;
+  border-bottom: 1px solid var(--ui1);
+  display: flex;
+  justify-content: flex-end;
 }

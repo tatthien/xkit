@@ -1,16 +1,20 @@
 import "@mantine/core/styles.css";
-import { Box, MantineProvider, Stack } from "@mantine/core";
+import { ActionIcon, Box, MantineProvider, Stack, Text } from "@mantine/core";
 import { HashRouter, NavLink, Route, Routes } from "react-router-dom";
 import Youtube from "./routes/Youtube";
 import TextCaseConverter from "./routes/TextCaseConverter";
-import { IconBrandYoutube, IconLetterCase } from "@tabler/icons-react";
+import {
+  IconBrandGithub,
+  IconBrandYoutube,
+  IconLetterCase,
+} from "@tabler/icons-react";
 import classes from "./app.module.css";
 import { clsx } from "clsx";
 
 const navItems = [
   {
     text: "Youtube download",
-    link: "/youtube",
+    link: "/",
     icon: IconBrandYoutube,
   },
   {
@@ -24,9 +28,15 @@ export default function App() {
   return (
     <MantineProvider>
       <HashRouter>
-        <Box className={classes.mainContainer}>
+        <Box className={classes.wrapper}>
           <Box className={classes.sidebar}>
-            <Stack gap={2}>
+            <Box
+              style={{ "--wails-draggable": "drag" }}
+              className={classes.sidebarHeader}
+            >
+              <Text fw={600}>x-kit</Text>
+            </Box>
+            <Stack gap={2} className={classes.sidebarNav}>
               {navItems.map((item) => (
                 <NavLink
                   to={item.link}
@@ -44,13 +54,29 @@ export default function App() {
             </Stack>
           </Box>
           <Box className={classes.content}>
-            <Routes>
-              <Route path="/youtube" element={<Youtube />} />
-              <Route
-                path="/text-case-converter"
-                element={<TextCaseConverter />}
-              />
-            </Routes>
+            <Box
+              style={{ "--wails-draggable": "drag" }}
+              className={classes.contentHeader}
+            >
+              <ActionIcon
+                variant="subtle"
+                component="a"
+                href="https://github.com/tatthien"
+                target="_blank"
+                color="gray"
+              >
+                <IconBrandGithub size={18} />
+              </ActionIcon>
+            </Box>
+            <Box p={16}>
+              <Routes>
+                <Route path="/" element={<Youtube />} />
+                <Route
+                  path="/text-case-converter"
+                  element={<TextCaseConverter />}
+                />
+              </Routes>
+            </Box>
           </Box>
         </Box>
       </HashRouter>
