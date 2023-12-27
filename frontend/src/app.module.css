@@ -1,0 +1,32 @@
+.mainContainer {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  background: var(--bg2);
+  padding: 0.5rem 0.5rem;
+  border-right: 1px solid var(--ui1);
+}
+
+.content {
+  flex: 1;
+  padding: 1rem;
+}
+
+.sidebarLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  color: var(--nav-item-color);
+}
+
+.sidebarLink:hover,
+.sidebarLinkActive {
+  background: var(--nav-item-background-hover);
+  color: var(--nav-item-color-hover);
+}
