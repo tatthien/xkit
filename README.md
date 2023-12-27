@@ -1,19 +1,5 @@
-[#](#) README
+# x-kit
 
-## About
+I build my own tools and you should too.
 
-This is the official Wails React-TS template.
-
-You can configure the project by editing `wails.json`. More information about the project settings can be found
-here: https://wails.io/docs/reference/project-config
-
-## Live Development
-
-To run in live development mode, run `wails dev` in the project directory. This will run a Vite development
-server that will provide very fast hot reload of your frontend changes. If you want to develop in a browser
-and have access to your Go methods, there is also a dev server that runs on http://localhost:34115. Connect
-to this in your browser, and you can call your Go code from devtools.
-
-## Building
-
-To build a redistributable, production mode package, use `wails build`.
+<img width="1136" alt="Screenshot 2023-12-27 at 14 34 12" src="https://github.com/tatthien/xkit/assets/72242664/a217a256-b490-41d8-a58c-9bece4b25e66">
