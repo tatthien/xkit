@@ -10,10 +10,11 @@ import {
 } from "@tabler/icons-react";
 import classes from "./app.module.css";
 import { clsx } from "clsx";
+import { BrowserOpenURL } from "../wailsjs/runtime/runtime";
 
 const navItems = [
   {
-    text: "Youtube download",
+    text: "YouTube downloader",
     link: "/",
     icon: IconBrandYoutube,
   },
@@ -61,9 +62,10 @@ export default function App() {
               <ActionIcon
                 variant="subtle"
                 component="a"
-                href="https://github.com/tatthien"
-                target="_blank"
                 color="gray"
+                onClick={() =>
+                  BrowserOpenURL("https://github.com/tatthien/xkit")
+                }
               >
                 <IconBrandGithub size={18} />
               </ActionIcon>
