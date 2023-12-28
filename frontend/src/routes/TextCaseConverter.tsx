@@ -47,7 +47,11 @@ export default function TextCaseConverter() {
 
   return (
     <Box>
-      <Group justify="flex-end" mb={8}>
+      <Group justify="space-between" mb={8}>
+        <Text
+          fz="xs"
+          c="gray.6"
+        >{`${wordCount} words ${characterCount} characters`}</Text>
         <CopyButton value={value} />
       </Group>
       <Textarea
@@ -60,9 +64,6 @@ export default function TextCaseConverter() {
         value={value}
         onChange={(event) => setValue(event.currentTarget.value)}
       />
-      <Text mb={8} fz="sm">
-        {`${wordCount} words | ${characterCount} characters`}
-      </Text>
       <Group gap={6}>
         <Button onClick={handleUpperCase}>UPPERCASE</Button>
         <Button onClick={handleLowerCase}>lowercase</Button>
