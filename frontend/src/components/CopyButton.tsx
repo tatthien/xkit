@@ -13,9 +13,8 @@ export function CopyButton({ value }: CopyButtonProps) {
           leftSection={
             copied ? <IconCheck size={14} /> : <IconCopy size={14} />
           }
-          color={copied ? "teal" : "blue"}
           size="compact-sm"
-          variant="default"
+          variant="subtle"
           onClick={copy}
         >
           {copied ? "Copied" : "Copy"}
