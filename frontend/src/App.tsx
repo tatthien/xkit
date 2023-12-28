@@ -6,37 +6,49 @@ import TextCaseConverter from "./routes/TextCaseConverter";
 import {
   IconBrandGithub,
   IconBrandYoutube,
+  IconLayoutSidebar,
   IconLetterCase,
 } from "@tabler/icons-react";
 import classes from "./app.module.css";
 import { clsx } from "clsx";
 import { BrowserOpenURL } from "../wailsjs/runtime/runtime";
+import { theme } from "./theme";
+import { useState } from "react";
+import { useDisclosure } from "@mantine/hooks";
 
 const navItems = [
   {
-    text: "YouTube downloader",
+    text: "YouTube Downloader",
     link: "/",
     icon: IconBrandYoutube,
   },
   {
-    text: "Text case converter",
+    text: "Text Case Converter",
     link: "/text-case-converter",
     icon: IconLetterCase,
   },
 ];
 
 export default function App() {
+  const [activeWindowTitle, setActiveWindowTitle] = useState(navItems[0].text);
+  const [opended, handlers] = useDisclosure(true);
+
   return (
-    <MantineProvider>
+    <MantineProvider theme={theme}>
       <HashRouter>
         <Box className={classes.wrapper}>
-          <Box className={classes.sidebar}>
+          <Box
+            className={classes.sidebar}
+            style={{
+              display: opended ? "block" : "none",
+            }}
+          >
             <Box
-              style={{ "--wails-draggable": "drag" }}
+              style={{
+                "--wails-draggable": "drag",
+              }}
               className={classes.sidebarHeader}
-            >
-              <Text fw={600}>x-kit</Text>
-            </Box>
+            ></Box>
             <Stack gap={2} className={classes.sidebarNav}>
               {navItems.map((item) => (
                 <NavLink
@@ -47,6 +59,7 @@ export default function App() {
                       isActive && classes.sidebarLinkActive,
                     )
                   }
+                  onClick={() => setActiveWindowTitle(item.text)}
                 >
                   <item.icon size={18} />
                   {item.text}
@@ -56,9 +69,20 @@ export default function App() {
           </Box>
           <Box className={classes.content}>
             <Box
-              style={{ "--wails-draggable": "drag" }}
+              style={{
+                "--wails-draggable": "drag",
+                paddingLeft: opended ? "0.5rem" : "4.5rem",
+              }}
               className={classes.contentHeader}
             >
+              <ActionIcon
+                variant="subtle"
+                color="gray"
+                onClick={() => handlers.toggle()}
+              >
+                <IconLayoutSidebar size={18} />
+              </ActionIcon>
+              <Text>{activeWindowTitle}</Text>
               <ActionIcon
                 variant="subtle"
                 component="a"

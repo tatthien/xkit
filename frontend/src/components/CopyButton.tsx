@@ -14,7 +14,7 @@ export function CopyButton({ value }: CopyButtonProps) {
             copied ? <IconCheck size={14} /> : <IconCopy size={14} />
           }
           color={copied ? "teal" : "blue"}
-          size="xs"
+          size="compact-sm"
           variant="default"
           onClick={copy}
         >

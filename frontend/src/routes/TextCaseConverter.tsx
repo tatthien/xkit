@@ -47,10 +47,7 @@ export default function TextCaseConverter() {
 
   return (
     <Box>
-      <Group justify="space-between" mb={8}>
-        <Title order={2} fz="lg">
-          Text case converter
-        </Title>
+      <Group justify="flex-end" mb={8}>
         <CopyButton value={value} />
       </Group>
       <Textarea
