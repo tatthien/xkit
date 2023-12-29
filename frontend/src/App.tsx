@@ -1,8 +1,8 @@
 import "@mantine/core/styles.css";
 import { ActionIcon, Box, MantineProvider, Stack, Text } from "@mantine/core";
 import { HashRouter, NavLink, Route, Routes } from "react-router-dom";
-import Youtube from "./routes/Youtube";
-import TextCaseConverter from "./routes/TextCaseConverter";
+import YoutubeDownloader from "./routes/youtube-downloader";
+import TextCaseConverter from "./routes/text-case-converter";
 import {
   IconBrandGithub,
   IconBrandYoutube,
@@ -69,11 +69,11 @@ export default function App() {
           </Box>
           <Box className={classes.content}>
             <Box
+              className={classes.contentHeader}
               style={{
                 "--wails-draggable": "drag",
                 paddingLeft: opended ? "0.5rem" : "4.5rem",
               }}
-              className={classes.contentHeader}
             >
               <ActionIcon
                 variant="subtle"
@@ -94,9 +94,9 @@ export default function App() {
                 <IconBrandGithub size={18} />
               </ActionIcon>
             </Box>
-            <Box p={16}>
+            <Box className={classes.contentInner} p={16}>
               <Routes>
-                <Route path="/" element={<Youtube />} />
+                <Route path="/" element={<YoutubeDownloader />} />
                 <Route
                   path="/text-case-converter"
                   element={<TextCaseConverter />}

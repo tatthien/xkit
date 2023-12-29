@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   height: 100vh;
+  overflow: hidden;
 }
 
 .header {
@@ -56,4 +57,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.contentInner {
+  height: calc(100% - 40px);
+  overflow-y: auto;
 }
